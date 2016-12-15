@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<!-- COLOQUEI A LINGUAGEM DA PAGINA PARA PT-BR -->
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- ADICIONEI O META PRA RECONHECER OS CARACTERES UTF-8 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Web Cafeteria</title>
+
+<!-- MODIFICA AI COM AS REFERENCIAS PROS LINK -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/style.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1 class="bd-title">Web Cafeteria</h1>
+			<div class="clearfix">
+				<div class="pull-left">
+					<p class="lead">Ligação direta entra Garçom e Cozinha</p>
+				</div>
+				<div>
+					<div class="pull-right">
+						<button type="button" class="btn btn-default btn-sm"
+							data-toggle="modal" data-target="#novaCozinhaModal">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+					</div>
+				</div>
+				<div class="pull-right">
+					<button type="button" class="btn btn-default btn-sm"
+						data-toggle="modal" data-target="#novoGarcomModal">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button>
+				</div>
+			</div>
+			<div class="pull-right">
+				<button type="button" class="btn btn-default btn-sm"
+					data-toggle="modal" data-target="#novoItemPedidoModal">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+			</div>
+			<div class="pull-right">
+				<button type="button" class="btn btn-default btn-sm"
+					data-toggle="modal" data-target="#novoPedidoModal">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+			</div>
+			<div class="pull-right">
+				<button type="button" class="btn btn-default btn-sm"
+					data-toggle="modal" data-target="#novoProdutoModal">
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" th:each="cozinha : ${cozinhas}">
+			<h2 th:text="${cozinha.nome}">Nome da Cozinha</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" th:each="garcom : ${garcons}">
+			<h2 th:text="${garcom.nome}">Nome do Garcom</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" th:each="itemPedido : ${itensPedidos}">
+			<h2 th:text="${itemPedido.quantidade}">Quantidade de itens
+				pedidos</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" th:each="pedido : ${pedidos}">
+			<h2 th:text="${pedido.data}">Data do pedido</h2>
+			<h2 th:text="${pedido.finalizado}">Status do pedido</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" th:each="produto : ${produtos}">
+			<h2 th:text="${produto.descricao}">Descrição do produto</h2>
+			<h2 th:text="${produto.valor}">Valor do produto</h2>
+		</div>
+	</div>
+
+	<div class="modal fade" id="novaCozinhaModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Nova Cozinha</h4>
+				</div>
+				<form th:action="@{/cozinhas}" method="POST" th:object="${cozinha}">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Nome</label> <input type="text"
+								class="form-control" id="nome" placeholder="Nome"
+								th:field="*{nome}">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="novoGarcomModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Novo garçom</h4>
+				</div>
+				<form th:action="@{/garcons}" method="POST" th:object="${garcom}">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Nome</label> <input type="text"
+								class="form-control" id="nome" placeholder="Nome"
+								th:field="*{nome}">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="novoItemPedidoModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Novo item pedido</h4>
+				</div>
+				<form th:action="@{/itensPedidos}" method="POST"
+					th:object="${itemPedido}">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Quantidade</label> <input type="text"
+								class="form-control" id="quantidade" placeholder="Quantidade"
+								th:field="*{quantidade}">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="novoPedidoModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Novo pedido</h4>
+				</div>
+				<form th:action="@{/pedidos}" method="POST" th:object="${pedido}">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Data</label> <input type="text"
+								class="form-control" id="data" placeholder="Data"
+								th:field="*{data}">
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Finalizado</label> <input type="text"
+								class="form-control" id="finalizado" placeholder="Finalizado"
+								th:field="*{finalizado}">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="novoProdutoModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Novo produto</h4>
+				</div>
+				<form th:action="@{/produtos}" method="POST" th:object="${produto}">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Descrição</label> <input type="text"
+								class="form-control" id="descricao" placeholder="Descricao"
+								th:field="*{descricao}">
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="titulo">Valor</label> <input type="text"
+								class="form-control" id="valor" placeholder="Valor"
+								th:field="*{valor}">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- esse fechamento de DIV de baixo tá boiando  -->
+	<!-- </div> -->
+
+	<!-- ARRUMEI AS IMPORTAÇÕES DOS SCRIPT
+	(TU PODERIA COLOCAR O REPOSITÓRIO DO PRORIO JQUERY/BOOTSTRAP
+	 NA INTERNET PRA NÃO FICAR ESSES ARQUIVOS NO SERVIDOR) 
+	 
+	 TIPO:
+	 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	ASSIM ELE PEGA A VERSÃO DO REPOSITORIO OFICIAL (CDN) E "EMULA" NA PAGINA
+	 -->
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>
