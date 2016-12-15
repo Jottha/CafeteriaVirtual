@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gs-rest-service&apos; to &apos;WebCafeteria&apos;" description="Rename resource &apos;gs-rest-service&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/gs-rest-service" name="WebCafeteria" stamp="1481835878481" updateReferences="true"/>
+</session>
