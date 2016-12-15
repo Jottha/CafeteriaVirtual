@@ -453,3 +453,36 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:14:45.865
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-15 18:16:26.052
+!MESSAGE Launch configuration WebCafeteriaApplication (1) references non-existing project WebCafeteria.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-15 18:16:26.052
+!MESSAGE Launch configuration WebCafeteriaApplication (1) references non-existing project WebCafeteria.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-15 18:16:26.083
+!MESSAGE Launch configuration WebCafeteriaApplication (1) references non-existing project WebCafeteria.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:16:47.943
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:18:16.771
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:20:39.771
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:21:08.523
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:25:46.757
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:27:42.214
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-12-15 18:27:49.236
+!MESSAGE The archive: C:/Users/BRENO/workspace/palestra-spring-boot-a-producao-cti/.mvn/wrapper/maven-wrapper.jar which is referenced by the classpath, does not exist.
